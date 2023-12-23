@@ -10,7 +10,7 @@ namespace MaternalDatabase
 {
     public class DBManager
     {
-        static string DB_Connection_String = @"Data Source=DESKTOP-3N4TPI1\SQLEXPRESS;Initial Catalog=Enrollment;Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=DESKTOP-3N4TPI1\SQLEXPRESS;Initial Catalog=Maternal_and_Baby_Medical_Care_Database;Integrated Security=True";
         SqlConnection myConnection;
         static bool check=false;
         public DBManager()
