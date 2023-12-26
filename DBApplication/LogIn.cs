@@ -26,29 +26,29 @@ namespace MaternalDatabase
                 MessageBox.Show("Please, fill all fields.");
                 return;
             }
-            bool resultadmin = ControllerObj.SearchAdmin(kryptonTextBox1.Text, kryptonTextBox2.Text);
-            if (resultadmin)
+            int resultadmin = ControllerObj.SearchAdmin(kryptonTextBox1.Text, kryptonTextBox2.Text);
+            if (resultadmin == 1)
             {
                 Admin A = new Admin();
                 A.Show();
                 return;
             }
-            bool resultmother = ControllerObj.SearchMother(kryptonTextBox1.Text, kryptonTextBox2.Text);
-            if (resultmother)
+            int resultmother = ControllerObj.SearchMother(kryptonTextBox1.Text, kryptonTextBox2.Text);
+            if (resultmother == 1)
             {
                 Mother M = new Mother();
                 M.Show();
                 return;
             }
-            bool resultgyno = ControllerObj.SearchGyno(kryptonTextBox1.Text, kryptonTextBox2.Text);
-            if (resultgyno)
+            int resultgyno = ControllerObj.SearchGyno(kryptonTextBox1.Text, kryptonTextBox2.Text);
+            if (resultgyno == 1)
             {
                 Gynecologist G = new Gynecologist();
                 G.Show();
                 return;
             }
-            bool resultped = ControllerObj.SearchPed(kryptonTextBox1.Text, kryptonTextBox2.Text);
-            if (resultped)
+            int resultped = ControllerObj.SearchPed(kryptonTextBox1.Text, kryptonTextBox2.Text);
+            if (resultped == 1)
             {
                 Pediatrician P = new Pediatrician();
                 P.Show();

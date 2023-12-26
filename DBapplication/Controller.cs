@@ -19,29 +19,25 @@ namespace MaternalDatabase
         {
             DBMan.CloseConnection();
         }
-        public bool SearchAdmin(string username, string password)
+        public int SearchAdmin(string username, string password)
         {
-            string query = "SELECT Username, User_Password FROM DATABASE_ADMIN WHERE Username = '" + username + "' AND User_Password = '" + password + "';";
-            DataTable DT = DBMan.ExecuteReader(query);
-            return DT.Rows.Count != 0;
+            string query = "SELECT COUNT(*) FROM DATABASE_ADMIN WHERE Username = '" + username + "' AND User_Password = '" + password + "';";
+            return Convert.ToInt32(DBMan.ExecuteScalar(query));
         }
-        public bool SearchMother(string username, string password)
+        public int SearchMother(string username, string password)
         {
-            string query = "SELECT Username, User_Password FROM MOTHER WHERE Username = '" + username + "' AND User_Password = '" + password + "';";
-            DataTable DT = DBMan.ExecuteReader(query);
-            return DT.Rows.Count != 0;
+            string query = "SELECT COUNT(*) FROM MOTHER WHERE Username = '" + username + "' AND User_Password = '" + password + "';";
+            return Convert.ToInt32(DBMan.ExecuteScalar(query));
         }
-        public bool SearchGyno(string username, string password)
+        public int SearchGyno(string username, string password)
         {
-            string query = "SELECT Username, User_Password FROM DOCTOR WHERE Username = '" + username + "' AND User_Password = '" + password + "' AND Doctor_Type = 'Gynecologist';";
-            DataTable DT = DBMan.ExecuteReader(query);
-            return DT.Rows.Count != 0;
+            string query = "SELECT COUNT(*) FROM DOCTOR WHERE Username = '" + username + "' AND User_Password = '" + password + "' AND Doctor_Type = 'Gynecologist';";
+            return Convert.ToInt32(DBMan.ExecuteScalar(query));
         }
-        public bool SearchPed(string username, string password)
+        public int SearchPed(string username, string password)
         {
-            string query = "SELECT Username, User_Password FROM DOCTOR WHERE Username = '" + username + "' AND User_Password = '" + password + "' AND Doctor_Type = 'Pediatrician';";
-            DataTable DT = DBMan.ExecuteReader(query);
-            return DT.Rows.Count != 0;
+            string query = "SELECT COUNT(*) FROM DOCTOR WHERE Username = '" + username + "' AND User_Password = '" + password + "' AND Doctor_Type = 'Pediatrician';";
+            return Convert.ToInt32(DBMan.ExecuteScalar(query));
         }
         public int InsertMother(string username, string fname, string lname, string email, string password)
         {
