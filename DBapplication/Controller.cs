@@ -49,12 +49,14 @@ namespace MaternalDatabase
         }
         public int InsertGyno(string username, string fname, string lname, string email, string password)
         {
-            string query = "INSERT INTO DOCTOR" + "VALUES ('" + username + "', '" + fname + "', '" + lname + "', 'Gynecologist', '" + email + "', '" + password + "');";
+            string type = "Gynecologist";
+            string query = "INSERT INTO DOCTOR(Username, First_Name, Last_Name, Doctor_Type, Email_Address, User_Password)" + "VALUES ('" + username + "', '" + fname + "', '" + lname + "', '" + type + "', '" + email + "', '" + password + "');";
             return DBMan.ExecuteNonQuery(query);
         }
         public int InsertPed(string username, string fname, string lname, string email, string password)
         {
-            string query = "INSERT INTO DOCTOR" + "VALUES ('" + username + "', '" + fname + "', '" + lname + "', 'Pediatrician', '" + email + "', '" + password + "');";
+            string type = "Pediatrician";
+            string query = "INSERT INTO DOCTOR(Username, First_Name, Last_Name, Doctor_Type, Email_Address, User_Password)" + "VALUES ('" + username + "', '" + fname + "', '" + lname + "', '" + type + "', '" + email + "', '" + password + "');";
             return DBMan.ExecuteNonQuery(query);
         }
     }
